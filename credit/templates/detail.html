@@ -1,0 +1,9 @@
+<h1>{{ client.name }}</h1>
+<ul>      
+{% for account in client.account_set.all %}
+    <li>{{ account.number }}, {{ account.type }}</li>
+        {% for credit in account.credit_set.all %}
+            <li>{{ credit.sum }}, {{ credit.date }}</li>
+        {% endfor %}
+{% endfor %}
+</ul>

@@ -1,0 +1,11 @@
+<h1>Client List</h1>
+{% if client_list %}
+    <ul>
+    {% for client in client_list %}
+        <li><a href="{% url 'detail' client.id %}">{{ client.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no clients.</p>
+{% endif %}
+
